@@ -3,7 +3,8 @@
 
     angular.module('DIApp', [])
     .controller('DIController', DIController)
-    .filter('loves', LovesFilter);
+    .filter('loves', LovesFilter)
+    .filter('truth', TruthFilter);
 
     DIController.$inject = ['$scope', '$filter', 'lovesFilter'];
     function DIController ($scope, $filter, lovesFilter) { 
@@ -37,4 +38,11 @@
                 return input;
             }
         };
+    function TruthFilter() {
+        return function (input, target, replace) {
+            input = input || "";
+            input = input.replace(target, replace);
+            return input; 
+        }
+    };
 }) ();

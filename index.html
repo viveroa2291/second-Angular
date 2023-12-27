@@ -18,6 +18,9 @@
         <br><br>
         Loves: {{ sayLovesMessage() }}
         <br><br><br>
+        Truth: {{ sayLovesMessage() | truth : 'healthy' : 'cookie' }}
+        <br> <br>
+        BIG TRUTH: {{ sayLovesMessage() | truth : 'healthy' : 'cookie' | uppercase }}
     </div>
     <div ng-controller="DIController"> 
         <button ng-click="feedAdan()">Feed Adan</button>
