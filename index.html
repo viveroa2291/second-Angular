@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="DIApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <title>Dependency Injection in Javascript (and AngularJS)</title>
+</head>
+<body>
+    <h1>Dependency Injection in Javascript
+        (and AngularJS)</h1>
+    <div ng-controller="DIController">
+        <input type="text" ng-model="name" ng-blur="upper();">
+        <br>
+        <br>
+        Original: {{sayMessage()}}
+        <br><br>
+        Loves: {{ sayLovesMessage() }}
+        <br><br><br>
+    </div>
+    <div ng-controller="DIController"> 
+        <button ng-click="feedAdan()">Feed Adan</button>
+        <br>
+        Cost: {{cookieCost | currency : none : 4}}
+        <img ng-src="images/adan_{{stateOfBeing}}.jpeg">
+    </div>
+</body>
+</html>
